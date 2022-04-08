@@ -22,7 +22,8 @@ enum keys {
     F6_InstructionCounter,
     Quit,
     Cancel,
-    Incorrect_key
+    Incorrect_key,
+    Flags
 };
 
 void rk_mytermsave(void)
@@ -101,6 +102,9 @@ int rk_readkey(enum keys* key)
         break;
     case 't':
         *key = Step;
+        break;
+    case 'f':
+        *key = Flags;
         break;
 
     case '\E':

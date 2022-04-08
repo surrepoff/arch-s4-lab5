@@ -73,6 +73,10 @@ int sc_memorySet(int address, int value)
         flag_register = flag_register | (1 << OUT_OF_MEMORY);
         return EXIT_FAILURE;
     }
+    if (value > 65535) {
+        flag_register = flag_register | (1 << OVERFLOW);
+        return EXIT_FAILURE;
+    }
 
     memory[address] = value;
 

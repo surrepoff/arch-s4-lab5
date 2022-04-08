@@ -81,82 +81,83 @@ int bc_bigchartemple(int* A, int number)
 {
     switch (number) {
     case 0:
-        A[0] = 2172748158;
-        A[1] = 2122416513;
+        A[0] = 0xC3C3C33C;
+        A[1] = 0x3CC3C3C3;
         return 0;
     case 1:
-        A[0] = 404626456;
-        A[1] = 2115508248;
+        A[0] = 0x181F1E18;
+        A[1] = 0xFF181818;
         return 0;
     case 2:
-        A[0] = 549552510;
-        A[1] = 4278387736;
+        A[0] = 0x30C0C33C;
+        A[1] = 0xFF03030C;
         return 0;
     case 3:
-        A[0] = 4169171071;
-        A[1] = 2139127936;
+        A[0] = 0x30C0C33C;
+        A[1] = 0x3CC3C030;
         return 0;
     case 4:
-        A[0] = 1009001508;
-        A[1] = 538976288;
+        A[0] = 0xFFC3C3C3;
+        A[1] = 0xC0C0C0C0;
         return 0;
     case 5:
-        A[0] = 1006896188;
-        A[1] = 1008738336;
+        A[0] = 0x3C0303FF;
+        A[1] = 0x3FC0C0C0;
         return 0;
     case 6:
-        A[0] = 67372092;
-        A[1] = 1009001532;
+        A[0] = 0x3F0303FC;
+        A[1] = 0x3CC3C3C3;
         return 0;
     case 7:
-        A[0] = 538976316;
-        A[1] = 538976368;
+        A[0] = 0x30C0C0FF;
+        A[1] = 0x0C0C0C30;
         return 0;
     case 8:
-        A[0] = 405021720;
-        A[1] = 405021732;
+        A[0] = 0x3CC3C33C;
+        A[1] = 0x3CC3C3C3;
         return 0;
     case 9:
-        A[0] = 1009001532;
-        A[1] = 1009000480;
+        A[0] = 0xFCC3C33C;
+        A[1] = 0x3CC3C0C0;
         return 0;
     case 10: // A
-        A[0] = 538977340;
-        A[1] = 405021752;
+        A[0] = 0xFFC3C33C;
+        A[1] = 0xC3C3C3C3;
         return 0;
     case 11: // B
-        A[0] = 67372036;
-        A[1] = 405021724;
+        A[0] = 0x3FC3C33F;
+        A[1] = 0x3FC3C3C3;
         return 0;
     case 12: // C
-        A[0] = 67380248;
-        A[1] = 405013508;
+        A[0] = 0x0303C33C;
+        A[1] = 0x3CC30303;
         return 0;
     case 13: // D
-        A[0] = 538976288;
-        A[1] = 405021752;
+        A[0] = 0xC3C3C33F;
+        A[1] = 0x3FC3C3C3;
         return 0;
     case 14: // E
-        A[0] = 1009001496;
-        A[1] = 405013508;
+        A[0] = 0x3F0303FF;
+        A[1] = 0xFF030303;
         return 0;
     case 15: // F
-        A[0] = 67380248;
-        A[1] = 67372046;
+        A[0] = 0x3F0303FF;
+        A[1] = 0x03030303;
         return 0;
     case -1: // +
-        A[0] = 4279769112;
-        A[1] = 404232447;
+        A[0] = 0xFF181800;
+        A[1] = 0x00001818;
         return 0;
     case -2: // -
-        A[0] = 4278190080;
-        A[1] = 255;
+        A[0] = 0xFF000000;
+        A[1] = 0x00000000;
         return 0;
     }
     return -1;
 }
 
-int bc_printbigchar(int* A, int x, int y, enum colors fg_color, enum colors bg_color)
+int bc_printbigchar(
+        int* A, int x, int y, enum colors fg_color, enum colors bg_color)
 {
     mt_gotoXY(x, y);
     mt_setfgcolor(fg_color);
@@ -180,9 +181,6 @@ int bc_printbigchar(int* A, int x, int y, enum colors fg_color, enum colors bg_c
         x++;
         mt_gotoXY(x, y);
     }
-
-    mt_setbgcolor(NONE);
-    mt_setfgcolor(WHITE);
 
     return 0;
 }
